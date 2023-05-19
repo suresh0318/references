@@ -1,0 +1,53 @@
+const ActiveDirectory = require('activedirectory');
+
+const config = {
+
+  url: 'ldap://your-domain-controller-url',
+
+  baseDN: 'your-base-dn',
+
+  username: 'your-service-account-username',
+
+  password: 'your-service-account-password'
+
+};
+
+const ad = new ActiveDirectory(config);
+
+const authenticateUser = (username, password) => {
+
+  return new Promise((resolve, reject) => {
+
+    ad.authenticate(username, password, (err, auth) => {
+
+      if (err) {
+
+        reject(err);
+
+        return;
+
+      }
+
+      resolve(auth);
+
+    });
+
+  });
+
+};
+
+// Example usage:
+
+authenticateUser('user@example.com', 'password')
+
+  .then(auth => {
+
+    console.log('Authentication successful');
+
+  })
+
+  .catch(err => {
+
+    console.error('Authentication failed:', err);
+
+  });
