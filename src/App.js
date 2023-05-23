@@ -1,8 +1,9 @@
 import './App.css';
-import DynamicAccordion from './Accordian';
 import Timer from './Timer';
 import Table from './Table';
 import Grid1 from './Grid';
+import QuestionsWithCheckboxes from './Accordian';
+import ToggleAccordion from './ToggleAccordian';
 
 function App() {
 
@@ -10,9 +11,10 @@ function App() {
   return (
     <div className="App">
       {/* <Timer /> */}
-      {/* <DynamicAccordion /> */}
+      {/* <QuestionsWithCheckboxes /> */}
       {/* <Table /> */}
-  <Grid1 />
+  {/* <Grid1 /> */}
+  <ToggleAccordion />
     </div>
   );
 }

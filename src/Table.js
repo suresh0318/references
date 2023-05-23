@@ -106,3 +106,17 @@ function Table() {
   );
 }
 export default Table;
+
+
+const data = [{
+  label:"question1",
+  options:["option q11",'option q12','option q13','option q14']
+},
+{
+  label:"question2",
+  options:["option q21",'option q22','option q23','option q24']
+},
+{
+  label:"question3",
+  options:["option q31",'option q32','option q33','option q34']
+}]
