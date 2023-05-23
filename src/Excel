@@ -1,0 +1,21 @@
+
+const fs = require('fs');
+const xlsx = require('xlsx');
+const xml2js = require('xml2js');
+
+// Load the Excel file
+const workbook = xlsx.readFile('input.xlsx');
+
+// Choose the sheet you want to convert (assuming the first sheet in this example)
+const sheetName = workbook.SheetNames[0];
+const sheet = workbook.Sheets[sheetName];
+
+// Convert the sheet to JSON format
+const jsonData = xlsx.utils.sheet_to_json(sheet, { header: 1 });
+
+// Convert JSON to XML
+const xmlBuilder = new xml2js.Builder({ rootName: 'data' });
+const xmlData = xmlBuilder.buildObject({ sheet: jsonData });
+
+// Write the XML data to a file
+fs.writeFileSync('output.xml', xmlData);
