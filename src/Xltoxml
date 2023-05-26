@@ -28,3 +28,27 @@ export default App;
 
 
 
+import React from 'react';
+import { json2xml } from 'xml-js';
+
+const jsonData = {
+  // Your JSON data here
+};
+
+const jsonToXml = (jsonData) => {
+  const xmlData = json2xml(jsonData, { compact: true, ignoreComment: true, spaces: 4 });
+  return xmlData;
+};
+
+const JsonToXmlConverter = () => {
+  const xmlData = jsonToXml(jsonData);
+
+  return (
+    <div>
+      <h2>Converted XML:</h2>
+      <pre>{xmlData}</pre>
+    </div>
+  );
+};
+
+export default JsonToXmlConverter;
