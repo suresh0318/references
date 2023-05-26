@@ -1,0 +1,26 @@
+import React, { useState } from 'react';
+import * as xlsx from 'xlsx';
+
+const App = () => {
+  const [excelFile, setExcelFile] = useState('');
+  const [xml, setXml] = useState('');
+
+  const handleExcelFileChange = (event) => {
+    setExcelFile(event.target.files[0]);
+  };
+
+  const handleConvertExcelToXml = () => {
+    const xml = convertExcelToXML(excelFile);
+    setXml(xml);
+  };
+
+  return (
+    <div>
+      <input type="file" name="excelFile" id="excelFile" onChange={handleExcelFileChange} />
+      <button onClick={handleConvertExcelToXml}>Convert to XML</button>
+      <pre>{xml}</pre>
+    </div>
+  );
+};
+
+export default App;
