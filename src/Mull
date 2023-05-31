@@ -1,0 +1,22 @@
+
+function replaceKeyNames(obj, newKeyName) {
+  if (typeof obj !== 'object' || obj === null) {
+    return obj; // base case: return non-object values as is
+  }
+
+  if (Array.isArray(obj)) {
+    return obj.map(item => replaceKeyNames(item, newKeyName)); // recursively process array elements
+  }
+
+  const newObj = {};
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      const value = obj[key];
+      const newKey = newKeyName; // replace the key name with the desired word
+      
+      newObj[newKey] = replaceKeyNames(value, newKeyName); // recursively process nested objects
+    }
+  }
+
+  return newObj;
+}
