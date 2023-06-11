@@ -4,6 +4,8 @@ import Table from './Table';
 import Grid1 from './Grid';
 import QuestionsWithCheckboxes from './Accordian';
 import ToggleAccordion from './ToggleAccordian';
+import SelectList from './SelectList';
+import Parent from './Parent';
 
 function App() {
 
@@ -14,7 +16,9 @@ function App() {
       {/* <QuestionsWithCheckboxes /> */}
       {/* <Table /> */}
   {/* <Grid1 /> */}
-  <ToggleAccordion />
+  {/* <ToggleAccordion /> */}
+  {/* <SelectList /> */}
+<Parent />
     </div>
   );
 }
