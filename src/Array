@@ -1,0 +1,38 @@
+const firstArray = [
+  {
+    Question: "question 1",
+    option: "a"
+  },
+  {
+    Option: "b"
+  },
+  {
+    Option: "c"
+  },
+  {
+    Option: "d"
+  },
+  {
+    Question: "question 2",
+    option: "2a"
+  },
+  {
+    Option: "2b"
+  },
+  {
+    Option: "2c"
+  },
+  {
+    Option: "2d"
+  }
+];
+
+const secondArray = firstArray.map((item) => {
+  return {
+    Question: item.Question,
+    option: item.Option,
+    Option: undefined
+  };
+});
+
+console.log(secondArray);

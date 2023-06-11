@@ -1,0 +1,54 @@
+import React, { useState } from 'react';
+import * as xlsx from 'xlsx';
+
+const App = () => {
+  const [excelFile, setExcelFile] = useState('');
+  const [xml, setXml] = useState('');
+
+  const handleExcelFileChange = (event) => {
+    setExcelFile(event.target.files[0]);
+  };
+
+  const handleConvertExcelToXml = () => {
+    const xml = convertExcelToXML(excelFile);
+    setXml(xml);
+  };
+
+  return (
+    <div>
+      <input type="file" name="excelFile" id="excelFile" onChange={handleExcelFileChange} />
+      <button onClick={handleConvertExcelToXml}>Convert to XML</button>
+      <pre>{xml}</pre>
+    </div>
+  );
+};
+
+export default App;
+
+
+
+
+import React from 'react';
+import { json2xml } from 'xml-js';
+
+const jsonData = {
+  // Your JSON data here
+};
+
+const jsonToXml = (jsonData) => {
+  const xmlData = json2xml(jsonData, { compact: true, ignoreComment: true, spaces: 4 });
+  return xmlData;
+};
+
+const JsonToXmlConverter = () => {
+  const xmlData = jsonToXml(jsonData);
+
+  return (
+    <div>
+      <h2>Converted XML:</h2>
+      <pre>{xmlData}</pre>
+    </div>
+  );
+};
+
+export default JsonToXmlConverter;

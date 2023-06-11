@@ -1,0 +1,33 @@
+
+import React, { useState } from 'react';
+
+const MyDualListbox = () => {
+  const [disableSelectAll, setDisableSelectAll] = useState(false);
+
+  // Your condition logic here
+  // For example, disabling the "Select All" button if there are no items in the list
+  const disableSelectAllBasedOnCondition = (items) => {
+    return items.length === 0;
+  };
+
+  const handleSelectAll = () => {
+    // Handle the select all functionality here
+  };
+
+  return (
+    <div>
+      <DualListbox
+        // other props
+        // pass the disableSelectAll state to the component
+        disableSelectAll={disableSelectAll}
+        // or pass the condition directly to the component
+        // disableSelectAll={disableSelectAllBasedOnCondition(items)}
+      />
+      <button onClick={handleSelectAll} disabled={disableSelectAll}>
+        Select All
+      </button>
+    </div>
+  );
+};
+
+export default MyDualListbox;
