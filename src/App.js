@@ -6,6 +6,9 @@ import QuestionsWithCheckboxes from './Accordian';
 import ToggleAccordion from './ToggleAccordian';
 import SelectList from './SelectList';
 import Parent from './Parent';
+import MyComponent from './Reload';
+import MultiUpload from './MultiUpload';
+import Multi1 from './Multi1';
 
 function App() {
 
@@ -18,7 +21,10 @@ function App() {
   {/* <Grid1 /> */}
   {/* <ToggleAccordion /> */}
   {/* <SelectList /> */}
-<Parent />
+{/* <Parent /> */}
+{/* <MyComponent /> */}
+<MultiUpload />
+<Multi1 />
     </div>
   );
 }
