@@ -9,6 +9,7 @@ import Parent from './Parent';
 import MyComponent from './Reload';
 import MultiUpload from './MultiUpload';
 import Multi1 from './Multi1';
+import Multi2 from './Multi2';
 
 function App() {
 
@@ -24,7 +25,7 @@ function App() {
 {/* <Parent /> */}
 {/* <MyComponent /> */}
 <MultiUpload />
-<Multi1 />
+<Multi2 />
     </div>
   );
 }
