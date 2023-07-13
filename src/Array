@@ -36,3 +36,4 @@ const secondArray = firstArray.map((item) => {
 });
 
 console.log(secondArray);
+

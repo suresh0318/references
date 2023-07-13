@@ -10,6 +10,7 @@ import MyComponent from './Reload';
 import MultiUpload from './MultiUpload';
 import Multi1 from './Multi1';
 import Multi2 from './Multi2';
+import JsonToExcel from './jsontoxml';
 
 function App() {
 
@@ -24,8 +25,9 @@ function App() {
   {/* <SelectList /> */}
 {/* <Parent /> */}
 {/* <MyComponent /> */}
-<MultiUpload />
-<Multi2 />
+{/* <MultiUpload />
+<Multi2 /> */}
+<JsonToExcel />
     </div>
   );
 }
